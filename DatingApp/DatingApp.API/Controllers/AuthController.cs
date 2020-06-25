@@ -50,6 +50,7 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserToLogin userToLogin)
         {
+            //throw new Exception("This is not Handled Exception");
             var loggedInUser = await _authRepository.Login(userToLogin.UserName.ToLower(), userToLogin.Password);
 
             if (loggedInUser == null)
