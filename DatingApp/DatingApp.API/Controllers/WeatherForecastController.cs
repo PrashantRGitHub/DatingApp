@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
+using DatingApp.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,27 +30,28 @@ namespace DatingApp.API.Controllers
             _dataContext = dataContext;
         }
 
-        //[HttpGet]
-        //public IEnumerable<WeatherForecast> Get()
-        //{
-        //    //var rng = new Random();
-        //    //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //    //{
-        //    //    Date = DateTime.Now.AddDays(index),
-        //    //    TemperatureC = rng.Next(-20, 55),
-        //    //    Summary = Summaries[rng.Next(Summaries.Length)]
-        //    //})
-        //    //.ToArray();
-        //}
-
-        [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> Get()
+        [AllowAnonymous]
+        public IEnumerable<WeatherForecast> Get()
         {
-            var weatherForeCastDb = await _dataContext.WeatherForcasts.ToListAsync();
-
-            return Ok(weatherForeCastDb);
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55)
+                //Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray();
         }
+
+        //[AllowAnonymous]
+        //[HttpGet]
+        //public async Task<IActionResult> Get()
+        //{
+        //    var weatherForeCastDb = await _dataContext.WeatherForcasts.ToListAsync();
+
+        //    return Ok(weatherForeCastDb);
+        //}
 
         [AllowAnonymous]
         [HttpGet("{id}")]

@@ -44,7 +44,10 @@ namespace DatingApp.API.Controllers
 
             var createdUser = await _authRepository.Register(user, userToRegister.Password);
 
-            return StatusCode(201);
+            return StatusCode(201, new {
+                message = "User Registered Successfully"
+            });
+
         }
 
         [HttpPost("login")]
@@ -78,7 +81,8 @@ namespace DatingApp.API.Controllers
             var token = tokenHandler.CreateToken(tokenDesciptor);
 
             return Ok(new { 
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                message = "Logged In Successull"
             });
 
         }

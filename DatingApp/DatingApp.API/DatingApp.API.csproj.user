@@ -6,7 +6,7 @@
   <PropertyGroup>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <ShowAllFiles>true</ShowAllFiles>
-    <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderID>ApiControllerWithActionsScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Controller</Controller_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_ControllerDialogWidth>600</WebStackScaffolding_ControllerDialogWidth>
     <WebStackScaffolding_IsLayoutPageSelected>True</WebStackScaffolding_IsLayoutPageSelected>
@@ -14,5 +14,6 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <NameOfLastUsedPublishProfile>FolderProfile</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
